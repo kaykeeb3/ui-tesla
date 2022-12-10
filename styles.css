@@ -1,0 +1,152 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    color:#171a20;
+    font-family: 'M PLUS 1', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.desktop{
+    display: none;
+}
+@media (min-width: 1200px) {
+    .desktop{
+        display: initial;
+    }
+}
+
+header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 5px 20px;
+    position: fixed;
+    top:0;
+    z-index:2;
+    width: 100%;
+}
+a.logo{
+    height:12px;
+    width:100px;
+    color:inherit;
+}
+header a{
+    color:inherit;
+}
+header nav a{
+    text-decoration:none;
+    padding: 5px 10px;
+}
+header nav.center{
+    text-align: center;
+}
+header nav.right{
+    text-align:right;
+}
+
+section{
+    height:100vh;
+    background-size: cover;
+    background-position: center center;
+}
+section .content{
+    opacity:0;
+    z-index:1;
+    position:fixed;
+    width: 100%;
+    top:0;
+    transition: opacity .3s ease;
+    height:100vh;
+    padding-top:15vh;
+    padding-bottom:15vh;
+    text-align:center;
+    display:grid;
+    grid-template-rows: min-content auto min-content;
+}
+section.active .content{
+    opacity:1;
+}
+section h1{
+    font-size:3rem;
+}
+section a{
+    color:inherit;
+}
+section .buttons a{
+    display:block;
+    background-color:#eee;
+    color:inherit;
+    padding: 12px 50px;
+    border-radius: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight:500;
+}
+section .buttons a:first-child{
+    background-color:#444;
+    color:#fff;
+}
+section .buttons{
+    display: grid;
+    row-gap: 20px;
+    margin: 0 40px;
+}
+@media (min-width: 768px) {
+    section .buttons{
+        max-width: 640px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+}
+
+aside{
+    position:fixed;
+    transition: right .4s ease;
+    right:-320px;
+    width: 320px;
+    background-color:#fff;
+    padding:80px 40px;
+    z-index:4;
+    height:100vh;
+}
+aside.active{
+    right:0;
+}
+aside a{
+    display:block;
+    color:inherit;
+    text-decoration: none;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight:500;
+}
+aside button.close{
+    font-size:24px;
+    border:0;
+    background-color: transparent;
+    position: absolute;
+    top:10px;
+    right:10px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight:100;
+    cursor:pointer;
+}
+.backdrop{
+    display:none;
+    position: fixed;
+    z-index:3;
+    inset: 0;
+    background-color: rgba(0,0,0,0);
+    transition: background-color .4s ease;
+    backdrop-filter: blur(5px);
+}
+.backdrop.active{
+    display:block;
+    background-color: rgba(0,0,0,.35);
+}
