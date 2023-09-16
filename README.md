@@ -19,5 +19,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O intuito desse projeto é conhecer as diversas funcionabilidades que o <strong>HTML, CSS e JavaScript</strong> é capaz de fazer.
 
-- [Visite o projeto online]([https://clone-tesla-sable.vercel.app/])
+- [Visite o projeto online](https://clone-tesla-sable.vercel.app)
 
